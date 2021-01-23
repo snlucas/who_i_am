@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:social_media_buttons/social_media_icons.dart';
+import 'package:who_i_am/data_controller.dart';
+import 'package:who_i_am/my_card.dart';
 
-class MiCardPage extends StatelessWidget {
+class MyCardTemplate extends StatelessWidget {
+  MyCard myCard = MyCard();
+  DataController _dataController;
+  MyCard _dataAccess; // Simplified version
+
+  MyCardTemplate(DataController dataController) {
+    this._dataController = dataController;
+    this._dataAccess = this._dataController.getMyCard();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,7 +33,15 @@ class MiCardPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('NAME'),
+                    Text(
+                      this._dataAccess.getName().isNotEmpty
+                          ? this._dataAccess.getName()
+                          : TextField(
+                              decoration: InputDecoration(
+                                labelText: 'Name',
+                              ),
+                            ),
+                    ),
                     SizedBox(
                       width: 150.0,
                       height: 13.0,

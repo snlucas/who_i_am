@@ -18,8 +18,7 @@ dependencies:
 
   social_media_buttons: ^0.1.2
   camera: ^0.6.4+5
-  path_provider: ^1.6.27
-  path: ^1.7.0
+  shared_preferences: ^0.5.12+4
 
 dev_dependencies:
   flutter_test:

@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
-import 'mi_card_page.dart';
+import 'bottom_bar.dart';
+import 'edit_screen.dart';
+import 'my_card_page.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MiCardPage(),
-      bottomNavigationBar: BottomAppBar(
-        notchMargin: 6.0,
-        color: Colors.grey[200],
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            IconButton(
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: Colors.grey[200],
-                ),
-                onPressed: () {}),
-          ],
-        ),
-        shape: CircularNotchedRectangle(),
-      ),
+      body: MyCardPage(),
+      bottomNavigationBar: BottomBar(),
       floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EditScreen(),
+            ),
+          );
+        },
         child: Icon(Icons.edit),
         backgroundColor: Colors.grey[900],
       ),
