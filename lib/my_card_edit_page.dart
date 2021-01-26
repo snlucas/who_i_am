@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:social_media_buttons/social_media_icons.dart';
 import 'package:who_i_am/my_card.dart';
 
-class MyCardPage extends StatelessWidget {
+class MyCardEditPage extends StatelessWidget {
   final MyCard myCard;
+  final userInfo;
 
-  const MyCardPage({this.myCard});
+  const MyCardEditPage({@required this.myCard, @required this.userInfo});
 
   @override
   Widget build(BuildContext context) {

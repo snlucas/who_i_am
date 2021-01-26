@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:who_i_am/my_card.dart';
-import 'package:who_i_am/my_card_template.dart';
-
+import 'package:who_i_am/my_card_edit_page.dart';
 import 'package:who_i_am/bottom_bar.dart';
 
-import 'data_controller.dart';
-
 class EditScreen extends StatelessWidget {
+  final MyCard myCard;
+  final userInfo;
+
+  const EditScreen({@required this.myCard, @required this.userInfo});
+
   @override
   Widget build(BuildContext context) {
-    DataController dc = DataController(MyCard());
     return Scaffold(
-      body: MyCardTemplate(dc),
+      body: MyCardEditPage(
+        myCard: myCard,
+        userInfo: userInfo,
+      ),
       bottomNavigationBar: BottomBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

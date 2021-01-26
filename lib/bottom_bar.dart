@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const Color kColorBotBar = Colors.greenAccent;
+
 class BottomBar extends StatelessWidget {
   const BottomBar({
     Key key,
@@ -9,15 +11,16 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       notchMargin: 6.0,
-      color: Colors.grey[200],
+      color: kColorBotBar,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           IconButton(
+            onPressed: () {},
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.grey[200],
+              color: kColorBotBar,
             ),
           ),
         ],

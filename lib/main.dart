@@ -7,6 +7,10 @@ class WhoIAm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.lightGreen,
+        accentColor: Colors.blueAccent,
+      ),
       home: HomeScreen(),
     );
   }

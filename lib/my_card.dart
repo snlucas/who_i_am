@@ -1,14 +1,36 @@
 class MyCard {
-  MyCard() {
-    this._img = '';
+  MyCard.blank() {
+    this._img = 'img';
     this._name = 'NAME';
     this._occupation = 'OCCUPATION';
-    this._email = '';
-    this._instagram = '';
-    this._linkedin = '';
-    this._twitter = '';
-    this._whatsapp = '';
-    this._reddit = '';
+    this._email = 'mail@email.com';
+    this._instagram = '@Instagram';
+    this._linkedin = '@Linkedin';
+    this._twitter = '@Twitter';
+    this._whatsapp = '@Whatsapp';
+    this._reddit = '@Reddit';
+  }
+
+  MyCard(
+    String img,
+    String name,
+    String occupation,
+    String email,
+    String instagram,
+    String linkedin,
+    String twitter,
+    String whatsapp,
+    String reddit,
+  ) {
+    this._img = img ?? 'img';
+    this._name = name ?? 'NAME';
+    this._occupation = occupation ?? 'OCCUPATION';
+    this._email = email ?? 'mail@email.com';
+    this._instagram = instagram ?? '@Instagram';
+    this._linkedin = linkedin ?? '@Linkedin';
+    this._twitter = twitter ?? '@Twitter';
+    this._whatsapp = whatsapp ?? '@Whatsapp';
+    this._reddit = reddit ?? '@Reddit';
   }
 
   String _img;
